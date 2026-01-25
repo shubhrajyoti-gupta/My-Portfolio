@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+   <!-- coreui for icons -->
+    <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.4.3/dist/css/coreui.min.css" rel="stylesheet" integrity="sha384-oMIIhJL1T5s+PxJr6+Qb0pO1IRFB6OGMM+J57UBT3UQKxSVsb++MkXpu9cLqaJxu" crossorigin="anonymous">
+    <style>
+        body {
+            scroll-behavior: smooth;
+            padding-top: 70px;
+            /* Add space for fixed navbar */
+        }
+
+        .section1 {
+            background-color: black;
+            padding: 100px 0 50px 0;
+            /* Add padding to hero section */
+        }
+
+        .section2 {
+            background-color: #011717;
+            padding: 100px 0 50px 0;
+            /* Add consistent padding */
+        }
+
+        .job-role {
+            color: #968fff;
+        }
+
+        nav {
+            border-bottom: 2px solid #0d4256;
+        }
+
+        .navbar {
+
+            margin-bottom: 0;
+            padding: 20px 0;
+        }
+
+        .navbar-nav {
+            margin-bottom: 0;
+        }
+
+        .navbar-brand {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .navbar-nav .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 0;
+            height: 2px;
+            background-color: #1db7ef;
+            transition: width 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .rounded-circle {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            /* This crops and fills the circle without stretching */
+            object-position: top;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+
+        .icon {
+            color: #1a73e8;
+            margin-right: 0.5rem;
+        }
+
+        .projects {
+            min-height: 100vh;
+            padding: 80px 0;
+        }
+
+        .card {
+            transition: transform 0.2s;
+            background-color: rgba(10, 10, 15, 0.8);
+            color: #cccccc;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Icon container alignment */
+.all-icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* FontAwesome icons */
+.all-icons i{
+    font-size: 30px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* LeetCode image icon */
+.leetcode-icon{
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+        .linkedin { color: #0A66C2; }   /* LinkedIn native */
+        .github { color: #ffffff; }     /* GitHub native */
+        .medium { color: #ffffff; }     /* Medium native */
+
+        
+        /* Hover effects */
+        .linkedin:hover { color: #0A66C2; }
+        .github:hover { color: #999; }
+        .medium:hover { color: #ccc; }
+        .leetcode-icon:hover { color: #f9a828; }
+
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #011d24;
+            margin-top: 0;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="text-light">
+
+    <!-- Navbar -->
+    <nav class="section2 navbar navbar-expand-lg fixed-top shadow-sm">
+        <div class="container">
+            <a target="blank" class="navbar-brand fw-bold text-info" href="#hero">Shubhrajyoti Gupta</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a target="blank" class="nav-link text-light" href="#hero">Home</a></li>
+                    <li class="nav-item"><a target="blank" class="nav-link text-light" href="#about">About</a></li>
+                    <li class="nav-item"><a target="blank" class="nav-link text-light" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a target="blank" class="nav-link text-light" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a target="blank" class="nav-link text-light" href="#projects">Projects</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="section1" id="hero">
+        <div class="container text-center">
+            <img src="./Images/profile-photo.png" alt="Profile Image" class="rounded-circle">
+            <h1 class="my-2 text-info fw-bolder">Shubhrajyoti Gupta</h1>
+            <h4 class="fw-light text-light">Electronics & Communication Engineer</h4>
+            <h4 class="job-role mb-4">Java Developer | Full Stack Java Developer | Content Writer</h4>
+            <div class="mx-auto" style="max-width: 600px;">
+                <p class="fw-light fs-5">B.Tech ECE student with strong Java skills, experience in Swing-based desktop
+                    apps, JUnit
+                    testing, and database management. Passionate about software development and content writing.</p>
+            </div>
+            <div class="d-flex justify-content-center my-4">
+                <a target="blank" class="btn btn-info fs-4" href="#projects">View Projects</a>
+            </div>
+
+            <div class="text-center my-4 all-icons d-flex align-items-center justify-content-center">
+                <a target="_blank" href="https://www.leetcode.com/shubhrajyoti-gupta">
+                    <img class="leetcode-icon" src="./Images/leetcode_icon.png" />
+                </a>
+
+                <a target="_blank" href="https://www.linkedin.com/in/shubhrajyoti-gupta">
+                    <i class="fab fa-linkedin linkedin"></i>
+                </a>
+
+                <a target="_blank" href="https://www.github.com/shubhrajyoti-gupta">
+                    <i class="fa-brands fa-github github"></i>
+                </a>
+
+                <a target="_blank" href="https://medium.com/@shubhrajyotigupta2005">
+                    <i class="fa-brands fa-medium medium"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section2" id="about">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1>About <span style="color: #1a73e8;">Me</span></h1>
+                <p class="fs-4">Passionate developer with a strong foundation in Java and web technologies</p>
+            </div>
+
+            <div class="row">
+                <!-- Education Card -->
+                <div class="col-md-6 mt-3">
+                    <div class="card border rounded border-primary p-4 h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-graduation-cap icon"></i>
+                            <h5 class="card-title mb-0">Education</h5>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title text-info">Bachelor of Technology</h6>
+                            <p class="card-text">Electronics and Communication Engineering<br>
+                                Ministry of Technology (2022-2026)</p>
+
+                            <h6 class="card-title text-info">Senior Secondary</h6>
+                            <p class="card-text">Vivekananda Academy<br>
+                                Percentage: 78%</p>
+
+                            <h6 class="card-title text-info">Secondary</h6>
+                            <p class="card-text">Aditya Birla Vani Bharati<br>
+                                Percentage: 87.85%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- My Journey Card -->
+                <div class="col-md-6 mt-3">
+                    <div class="card border rounded border-primary p-4 h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-user icon"></i>
+                            <h5 class="card-title text-info mb-0">My Journey</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">I'm a dedicated Electronics and Communication Engineering student with
+                                a passion for software development. My journey in programming began with Java, where
+                                I've developed strong skills in building desktop applications and working with
+                                databases.</p>
+
+                            <p class="card-text">Through internships and projects, I've gained hands-on experience in
+                                software development, including Swing-based applications, JUnit testing, and database
+                                management. I'm also passionate about content writing and have completed several writing
+                                internships.</p>
+
+                            <p class="card-text">I actively participate in hackathons and coding competitions to enhance
+                                my problem-solving skills and stay updated with the latest technologies. My goal is to
+                                become a skilled full-stack developer while continuing to contribute to the tech
+                                community through content creation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location Card -->
+                <div class="col mt-3">
+                    <div class="card border rounded border-primary p-4 h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-map-marker-alt icon"></i>
+                            <h5 class="card-title mb-0">Location</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Kolkata, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Technical Skills -->
+    <section class="section1" id="skills">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1>Technical <span style="color: #1a73e8;">Skills</span></h1>
+                <p class="fs-4">A comprehensive overview of my technical expertise and capabilities</p>
+            </div>
+            <!-- Skill Card -->
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card border rounded border-primary p-4 m-3">
+                        <div class="card-body">
+
+                            <h5 class="card-title mb-4"><i class="fa-solid fa-code icon"></i>Programming Languages</h5>
+                            <div class="d-flex flex-wrap">
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">C</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">C++</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Java</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">HTML</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">CSS</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border rounded border-primary p-4 m-3">
+                        <div class="card-body">
+
+                            <h5 class="card-title mb-4"><i class="fa-solid fa-database icon"></i>Database</h5>
+                            <div class="d-flex flex-wrap">
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">MySQL</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">MicroSoft Azure Cloud</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border rounded border-primary p-3 m-3">
+                        <div class="card-body">
+
+                            <h5 class="card-title mb-4"><i class="fa-solid fa-screwdriver-wrench icon"></i>Tools and
+                                Frameworks</h5>
+                            <div class="d-flex flex-wrap">
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Swing</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">JUnit</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Mockito</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Git</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">IntelliJ IDEA
+                                </span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Eclipse</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">PyCharm</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">VS Code</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">React</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Spring</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Spring Boot</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Tailwind CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border rounded border-primary p-3 m-3">
+                        <div class="card-body">
+
+                            <h5 class="card-title mb-4"><i class="fa-solid fa-chart-simple icon"></i>Analytical Skills
+                            </h5>
+                            <div class="d-flex flex-wrap">
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">DSA</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">OOPS</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Problem
+                                    Solving</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Software
+                                    Testing</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Agile</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Waterfall</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">SDLC</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border rounded border-primary p-1 m-3">
+                        <div class="card-body">
+
+                            <h5 class="card-title mb-4"><i class="fa-solid fa-pen-nib icon"></i>Design & Content Writing
+                            </h5>
+                            <div class="d-flex flex-wrap">
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Canva</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Figma</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Adobe XD</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">UI/UX Design</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Medium</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Blog Writing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border rounded border-primary p-1 m-3">
+                        <div class="card-body">
+
+                            <h5 class="card-title mb-4"><i class="fa-solid fa-language icon"></i>Languages</h5>
+                            <div class="d-flex flex-wrap">
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">English</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Hindi</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Bengali</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col text-center">
+                    <div class="card border rounded border-primary p-4 m-3">
+                        <div class="card-body">
+
+                            <h5 class="card-title text-info mb-4">Soft Skills</h5>
+                            <div class="d-flex flex-wrap justify-content-center">
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Teamwork</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Collaboration</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Vibe Coding</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Effective
+                                    Communication</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Adaptability</span>
+                                <span class="p-2 border border-primary rounded me-2 mb-2 card-text">Time
+                                    Management</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Experience & Achievements -->
+    <section class="section2" id="experience">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1>Experience & <span style="color: #1a73e8;">Achievements</span></h1>
+                <p class="fs-4">Professional experience, certifications, and accomplishments in my journey</p>
+            </div>
+            <br />
+            <h4 class="text-center text-info fw-bold">Professional Experience</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card border rounded border-primary p-4 m-3">
+                        <div class="card-body">
+
+                            <h5 class="card-title mb-4"><i class="fa-solid fa-user-doctor text-info"></i><span
+                                    class="mx-3">Java Developer Intern</span></h5>
+                            <p class="card-text text-secondary"><i
+                                    class="fa-solid fa-calendar-days text-secondary mx-2"></i>07/2025 - 08/2025</p>
+                            <p class="job-role card-text">Pinnacle Labs Pvt Ltd</p>
+                            <p class="card-text">Designed and implemented 3+ Java-based applications using Swing and
+                                core Java concepts, utilizing JavaFX for unit testing, ensuring code quality and
+                                performance.</p>
+                            <a target="blank" href="" class="btn btn-info px-3 py-2 mt-4 fs-5 rounded">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card border rounded border-primary p-4 m-3">
+                        <div class="card-body">
+
+                            <h5 class="card-title mb-4"><i class="fa-solid fa-user-doctor text-info"></i><span
+                                    class="mx-3">Java Developer Intern</span></h5>
+                            <p class="card-text text-secondary"><i
+                                    class="fa-solid fa-calendar-days text-secondary mx-2"></i>08/2025 - 09/2025</p>
+                            <p class="job-role card-text">CodTech IT Solutions</p>
+                            <p class="card-text">Developed Java-based applications and enhanced programming skills
+                                through hands-on projects, focusing on core Java concepts, object-oriented programming,
+                                and software development best practices.</p>
+                            <a target="blank" href="#" class="btn btn-info px-3 py-2 mt-4 fs-5 rounded">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <br />
+            <h4 class="text-center text-info fw-bold">Professional Certifications</h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card text-center border rounded border-primary p-4 m-3">
+                        <div class="card-body">
+
+                            <h5 class="card-title mb-4 text-info"><i class="fa-solid fa-trophy text-warning"></i><span
+                                    class="mx-3">Salesforce Trainee Virtual Internship</span></h5>
+                            <p class="card-text text-secondary">Salesforce Trailhead</p>
+                            <a target="blank" href="#" class="btn btn-info px-3 py-1 mt-2 fs-5 rounded">View<i
+                                    class="fa-solid fa-eye mx-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center border rounded border-primary p-4 m-3">
+                        <div class="card-body">
+
+                            <h5 class="card-title mb-4 text-info"><i class="fa-solid fa-trophy text-warning"></i><span
+                                    class="mx-3">Metro Railways Training</span></h5>
+                            <p class="card-text text-secondary">Metro Railways</p>
+                            <a target="blank" href="#" class="btn btn-info px-3 py-2 mt-4 fs-5 rounded">View<i
+                                    class="fa-solid fa-eye mx-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center border rounded border-primary p-4 m-3">
+                        <div class="card-body">
+
+                            <h5 class="card-title mb-4 text-info"><i class="fa-solid fa-trophy text-warning"></i><span
+                                    class="mx-3">Java Courses Certificate</span></h5>
+                            <p class="card-text text-secondary">Professional Training</p>
+                            <a target="blank" href="#" class="btn btn-info px-3 py-2 mt-4 fs-5 rounded">View<i
+                                    class="fa-solid fa-eye mx-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center border rounded border-primary p-4 m-3">
+                        <div class="card-body">
+
+                            <h5 class="card-title mb-4 text-info"><i class="fa-solid fa-trophy text-warning"></i><span
+                                    class="mx-3">Java Basic Certificate</span></h5>
+                            <p class="card-text text-secondary">HackerRank</p>
+                            <a target="blank" href="#" class="btn btn-info px-3 py-2 mt-4 fs-5 rounded">View<i
+                                    class="fa-solid fa-eye mx-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center border rounded border-primary p-4 m-3">
+                        <div class="card-body">
+
+                            <h5 class="card-title mb-4 text-info"><i class="fa-solid fa-trophy text-warning"></i><span
+                                    class="mx-3">Communication Certificate</span></h5>
+                            <p class="card-text text-secondary">TestDome</p>
+                            <a target="blank" href="#" class="btn btn-info px-3 py-2 mt-4 fs-5 rounded">View<i
+                                    class="fa-solid fa-eye mx-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center border rounded border-primary p-4 m-3">
+                        <div class="card-body">
+
+                            <h5 class="card-title mb-4 text-info"><i class="fa-solid fa-trophy text-warning"></i><span
+                                    class="mx-3">Accenture Software Development Certificate</span></h5>
+                            <p class="card-text text-secondary">Accenture</p>
+                            <a target="blank" href="#" class="btn btn-info px-3 py-2 mt-4 fs-5 rounded">View<i
+                                    class="fa-solid fa-eye mx-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <br />
+            <h4 class="text-center text-info fw-bold">Certificates of Accomplishment</h4>
+            <div class="row">
+                <div class="col-md-4 mt-3">
+                    <div class="card text-center border rounded border-primary p-4 m-3 h-100">
+                        <div class="card-body d-flex flex-column">
+                            <p class="my-2 fs-3 fw-bold text-success">Content Writing</p>
+                            <h5 class="card-title m-2">Earth5R Content Writing Internship Selection</h5>
+                            <p class="card-text text-secondary">Selected for content writing internship program</p>
+                            <a target="blank" href="#" class="btn btn-info px-3 py-2 mt-auto fs-5 rounded">View<i
+                                    class="fa-solid fa-eye mx-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <div class="card text-center border rounded border-primary p-4 m-3 h-100">
+                        <div class="card-body d-flex flex-column">
+                            <p class="my-2 fs-3 fw-bold text-success">Content Writing</p>
+                            <h5 class="card-title m-2">InAmigos Blog Writing Internship Selection</h5>
+                            <p class="card-text text-secondary">Selected for blog writing internship program</p>
+                            <a target="blank" href="#" class="btn btn-info px-3 py-2 mt-auto fs-5 rounded">View<i
+                                    class="fa-solid fa-eye mx-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <div class="card text-center border rounded border-primary p-4 m-3 h-100">
+                        <div class="card-body d-flex flex-column">
+                            <p class="my-2 fs-3 fw-bold text-success">Content Writing</p>
+                            <h5 class="card-title m-2">Marpu Foundations Content Writing Certificate</h5>
+                            <p class="card-text text-secondary">Completed content writing program</p>
+                            <a target="blank" href="#" class="btn btn-info px-3 py-2 mt-auto fs-5 rounded">View<i
+                                    class="fa-solid fa-eye mx-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <h4 class="text-center text-info fw-bold">Hackathons & Competitions</h4>
+            <div class="row">
+                <div class="col-md-3 mt-3">
+                    <div class="card text-center border rounded border-primary p-2 m-1 h-100">
+                        <div class="card-body d-flex flex-column">
+                            <p class="my-2 fs-5 fw-bold text-warning">Hackathon</p>
+                            <h5 class="card-title m-2">Smart India Hackathon (SIH) 2023</h5>
+                            <p class="card-text text-secondary">Participated in national-level hackathon</p>
+                            <a target="blank" href="#" class="btn btn-info px-3 py-2 mt-auto fs-5 rounded">View<i
+                                    class="fa-solid fa-eye mx-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-3">
+                    <div class="card text-center border rounded border-primary p-2 m-1 h-100">
+                        <div class="card-body d-flex flex-column">
+                            <p class="my-2 fs-5 fw-bold text-warning">Hackathon</p>
+                            <h5 class="card-title m-2">Bharatiya Antarishkh Hackathon</h5>
+                            <p class="card-text text-secondary">Space technology hackathon participant</p>
+                            <a target="blank" href="#" class="btn btn-info px-3 py-2 mt-auto fs-5 rounded">View<i
+                                    class="fa-solid fa-eye mx-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-3">
+                    <div class="card text-center border rounded border-primary p-2 m-1 h-100">
+                        <div class="card-body d-flex flex-column">
+                            <p class="my-2 fs-5 fw-bold text-warning">Hackathon</p>
+                            <h5 class="card-title m-2">UI/UX Design Contest</h5>
+                            <p class="card-text text-secondary">Design competition participant</p>
+                            <a target="blank" href="#" class="btn btn-info px-3 py-2 mt-auto fs-5 rounded">View<i
+                                    class="fa-solid fa-eye mx-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-3">
+                    <div class="card text-center border rounded border-primary p-2 m-1 h-100">
+                        <div class="card-body d-flex flex-column">
+                            <p class="my-2 fs-5 fw-bold text-warning">Hackathon</p>
+                            <h5 class="card-title m-2">Open Source Contest</h5>
+                            <p class="card-text text-secondary">Open source development competition</p>
+                            <a target="blank" href="#" class="btn btn-info px-3 py-2 mt-auto fs-5 rounded">View<i
+                                    class="fa-solid fa-eye mx-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Projects Section -->
+    <section class="section1" id="projects">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1>Featured <span style="color: #1a73e8;">Projects</span></h1>
+                <p class="fs-4">A showcase of my development skills and technical expertise</p>
+            </div>
+            <div class="row g-4">
+                <!-- 6 Project Cards -->
+                <div class="col-md-4">
+                    <div class="card border rounded border-primary h-100">
+                        <video src="./videos/pinnacle 1.mp4" class="card-img-top" alt="Project Video" controls></video>
+                        <div class="card-body">
+                            <h5 class="card-title text-info">Quiz App</h5>
+                            <p class="card-text fs-5">A Quiz taking app built in java using java swing with features like
+                                timer , results , scoreboard and progress bar with full fledged working condition.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border rounded border-primary h-100">
+                        <video src="./videos/pinnacle 2.mp4" class="card-img-top" alt="Project Video" controls></video>
+                        <div class="card-body">
+                            <h5 class="card-title text-info">Note Taking App </h5>
+                            <p class="card-text fs-5">A Note taking desktop built in java containing frameworks like java
+                                Swing and has features like file handling like creating , storing , editing and managing
+                                files in local storage.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border rounded border-primary h-100">
+                        <video src="./videos/pinnacle 3.mp4" class="card-img-top" alt="Project Video" controls></video>
+                        <div class="card-body">
+                            <h5 class="card-title text-info">Tic Tac Toe </h5>
+                            <p class="card-text fs-5">A java based Tic Tac Toe with real time gaming environment and tic tac
+                                toe and features like scoreboard , startup page , results.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card border rounded border-primary h-100 p-4">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-info fs-3 fw-bold">More Projects Coming Soon</h5>
+                            <div class="d-flex justify-content-center">
+                                <p class="card-text fs-5" style="max-width: 900px;">I'm continuously working on new projects
+                                    and exploring different technologies. Stay tuned for more exciting developments in
+                                    web development, mobile apps, and more Java applications.</p>
+                            </div>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a target="blank" href="#" class="btn btn-primary fs-5 mx-2"><i class="fa-brands fa-github fs-4 text-dark icon mx-3"></i>View All Repositories</a><a target="blank" href="" class="btn btn-light fs-5">LeetCode Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 MyPortfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
